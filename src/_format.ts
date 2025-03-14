@@ -79,11 +79,11 @@ export function getFormat(
   indent: string | number | undefined;
   whitespace: { start: string; end: string };
 } {
-  const format = formats.get(obj)
+  const format = formats.get(obj);
   if (!obj || typeof obj !== "object" || !format) {
     return { indent: opts?.indent, whitespace: { start: "", end: "" } };
   }
-  
+
   const indent = opts?.indent || detectIndent(format.sample || "").indent;
   return {
     indent,
